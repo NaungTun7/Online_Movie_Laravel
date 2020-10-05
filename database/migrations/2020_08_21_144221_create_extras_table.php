@@ -19,16 +19,18 @@ class CreateExtrasTable extends Migration
             $table->String("duration");
             $table->String("review");
             $table->String("type");
+            $table->String("quality");
+            $table->String("year");
             $table->unsignedBigInteger("movie_id");
             $table->foreign('movie_id')
                  ->references('id')
                  ->on('movies')
                  ->onDelete('cascade');
-                  $table->unsignedBigInteger("serie_id");
+                  /*$table->unsignedBigInteger("serie_id");
             $table->foreign('serie_id')
                  ->references('id')
                  ->on('series')
-                 ->onDelete('cascade');
+                 ->onDelete('cascade');*/
             $table->timestamps();
         });
     }

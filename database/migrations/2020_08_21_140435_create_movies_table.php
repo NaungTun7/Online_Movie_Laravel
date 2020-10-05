@@ -16,13 +16,16 @@ class CreateMoviesTable extends Migration
         Schema::create('movies', function (Blueprint $table) {
             $table->id();
             $table->text("name");
+            
+            $table->string('photo');
             $table->unsignedBigInteger('link_id');
             $table->timestamps();
             $table->foreign('link_id')
                  ->references('id')
                  ->on('links')
                  ->onDelete('cascade');
-            
+       
+           
         });
     }
 
